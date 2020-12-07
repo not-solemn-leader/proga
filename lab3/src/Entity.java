@@ -1,6 +1,24 @@
 public abstract class Entity implements Soundable, Concious, Fallable{
-    public void showEmotion(Emotion emotion){
+    protected String name;
+    Places place;
 
+    public void showEmotion(Emotion emotion){
+        String s = (emotion.equals(Emotion.EYE_BLEAKING))? " блестят глаза": " проявляется страх";
+        System.out.println("У " + this.toString() + s);
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
+
+    public void walk() {
+        System.out.println(this.toString() + " гуляет");
     }
 
     @Override
@@ -40,7 +58,24 @@ public abstract class Entity implements Soundable, Concious, Fallable{
         this.makeSound(Sound.CLAP);
     }
 
+    @Override
     public void getOnFeet() {
         System.out.println(this.toString() + " встает на ноги");
     };
+
+    public void relocateTo(Places place) {
+        String s;
+        switch (place) {
+            case BOX:
+                s = "ящик";
+                break;
+            case HALL:
+                s = "Прихожая";
+                break;
+            default:
+                s = "Кухня";
+        }
+        System.out.println(this.toString() + " находится в " + s);
+        this.place = place;
+    }
 }
