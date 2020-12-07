@@ -1,4 +1,4 @@
-public class Door {
+public class Door extends BaseObject{
     boolean isOpen;
     Places from, to;
     public Door(Places from, Places to, boolean isOpen){

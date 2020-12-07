@@ -16,4 +16,8 @@ public class Person extends Entity {
         String really = noticed? "": " не ";
         System.out.println(this.toString() + really + " заметил " + p.toString());
     }
+    public void makeSoundUsing(Sound sound, BaseObject o){
+        makeSound(sound);
+    }
+
 }

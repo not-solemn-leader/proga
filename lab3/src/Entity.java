@@ -1,6 +1,4 @@
-public abstract class Entity implements Soundable, Concious, Fallable{
-    protected String name;
-    Places place;
+public abstract class Entity extends BaseObject implements Soundable, Concious, Fallable{
 
     public void showEmotion(Emotion emotion){
         String s = (emotion.equals(Emotion.EYE_BLEAKING))? " блестят глаза": " проявляется страх";
