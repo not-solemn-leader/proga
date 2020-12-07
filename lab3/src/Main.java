@@ -5,6 +5,7 @@ public class Main {
         Person youngMan = new Person("Малыш");
         Person karlson = new Person("Карлсон");
         Person pek = new Person("Пек");
+        Door door = new Door(Places.HALL, Places.KITCHEN, false);
         frekenBock.loseConcious();
         frekenBock.fallDown();
         frekenBock.getConcious();
@@ -15,6 +16,7 @@ public class Main {
         youngMan.forgetAbout(karlson);
         karlson.makeSound(Sound.CREAK);
         karlson.relocateTo(Places.KITCHEN);
+        door.setOpen(true);
         youngMan.showEmotion(Emotion.TERRIFIYING);
         karlson.walk();
         frekenBock.notice(karlson, false);
